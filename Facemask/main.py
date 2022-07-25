@@ -74,10 +74,10 @@ model.evaluate(test_data,test_target)
 model.save('model.h5')
 from tensorflow.keras.preprocessing import image
 model=load_model('model.h5')
-i=image.load_img('./Datasets/DataSets/Mask/1 (16).jpg',target_size=(100,100))
+i=image.load_img('.\DataSets\DataSets\Mask\IMG_20220724_154346.jpg',target_size=(100,100))
 plt.imshow(i)
 i=image.img_to_array(i)/255.0
 i=i.reshape(1,100,100,3)
 p=model.predict(i)
 print(p)
-print(p[0][0]>p[0][1])
+print(p[0][0]<p[0][1])
