@@ -11,6 +11,8 @@ eye_cascade = cv2.CascadeClassifier('./Face/cascades/data/haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('./Face/cascades/data/haarcascade_smile.xml')
 
 
+
+
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("./Face/recognizers/face-trainner.yml")
 
@@ -35,7 +37,7 @@ while(True):
         
         roi = frame[y-100:y+h+500, x-200:x+w+500]
         # print(roi)
-        # recognize? deep learned model predict keras tensorflow pytorch scikit learn
+
         id_, conf = recognizer.predict(roi_gray)
         if conf >= 4 and conf <= 85:
             # print(5: #id_)
